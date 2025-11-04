@@ -1,6 +1,6 @@
 "use server";
 import cloudinary from "@/config/cloudinary";
-import connectDB from "@/config/database";
+
 import Property from "../models/Property";
 import { getSessionUser } from "@/utils/getSessionUser";
 import { revalidatePath } from "next/cache";
@@ -23,5 +23,9 @@ async function deleteProperty(propertyId) {
   revalidatePath("/", "layout");
 
   //extract public id from images
+  const publicIds = property.images.map((imageUrl) => {
+    const parts = imageUrl.split("/");
+    return parts.at(-1).split(".").at(0);
+  });
 }
 export default deleteProperty;

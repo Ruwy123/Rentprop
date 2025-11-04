@@ -1,8 +1,10 @@
 "use client";
+import * as React from "react";
 import { useEffect, useState } from "react";
 import { setDefaults, fromAddress } from "react-geocode";
-import { Map, Marker } from "react-map-gl/mapbox";
+import Map, { Marker } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
+
 import Image from "next/image";
 import pin from "@/assets/images/pin.svg";
 import Spinner from "./Spinner";
@@ -51,17 +53,16 @@ const PropertyMap = ({ property }) => {
     fetchCoords();
   }, []);
   if (loading) return <Spinner />;
-  if (geocodeError) return <div classname="text-2xl">No location found</div>;
+  if (geocodeError) return <div className="text-2xl">No location found</div>;
   return (
     <Map
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
-      mapLib={import("mapbox-gl")}
       initialViewState={{
         longitude: lng,
         latitude: lat,
         zoom: 15,
       }}
-      style={{ width: "100%", height: "500" }}
+      style={{ width: "100%", height: 500 }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
     >
       <Marker longitude={lng} latitude={lat} anchor="bottom">

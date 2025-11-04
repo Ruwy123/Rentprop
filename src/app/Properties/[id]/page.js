@@ -11,9 +11,11 @@ import PropertyContactForm from "@/components/PropertyContactForm";
 import BookmarkButton from "@/components/BookmarkButton";
 
 const PropertyPage = async ({ params }) => {
-  await connectDB();
+  connectDB();
+  const resolvedParams = await params;
+  const paramsId = resolvedParams.id;
 
-  const propertyDoc = await Property.findById(params.id).lean();
+  const propertyDoc = await Property.findById(paramsId).lean();
   const property = convertToSerializableObject(propertyDoc);
 
   if (!property) {
