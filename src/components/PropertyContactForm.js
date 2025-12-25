@@ -17,9 +17,14 @@ const PropertyContactForm = ({ property }) => {
 
   if (state.submitted) {
     return (
-      <p className="text-green-500 mb-4 text-center">
-        Your message has been sent
-      </p>
+      <div className="container rounded-md shadow-md w-full justify-center bg-white py-10 inline-block">
+        <h3 className="text-xl font-bold mb-6 text-center ">
+          Contact Property Manager
+        </h3>
+        <p className="text-green-500 mb-4 text-center">
+          Your message has been sent
+        </p>
+      </div>
     );
   }
 

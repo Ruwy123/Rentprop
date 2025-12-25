@@ -12,10 +12,9 @@ import BookmarkButton from "@/components/BookmarkButton";
 
 const PropertyPage = async ({ params }) => {
   connectDB();
-  const resolvedParams = await params;
-  const paramsId = resolvedParams.id;
-
-  const propertyDoc = await Property.findById(paramsId).lean();
+  const resolveParams = await params;
+  const { id } = resolveParams;
+  const propertyDoc = await Property.findById(id).lean();
   const property = convertToSerializableObject(propertyDoc);
 
   if (!property) {

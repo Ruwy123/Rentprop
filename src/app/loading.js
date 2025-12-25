@@ -1,4 +1,5 @@
 "use client";
+import { Padding } from "maplibre-gl";
 import ClipLoader from "react-spinners/ClipLoader";
 
 const override = {
@@ -8,12 +9,22 @@ const override = {
 };
 const LoadingPage = () => {
   return (
-    <ClipLoader
-      color="#36d7b7"
-      cssOverride={override}
-      size={150}
-      area-label="Loading"
-    />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh", // full page height
+        width: "100vw", // full page width
+      }}
+    >
+      <ClipLoader
+        color="#36d7b7"
+        cssOverride={override}
+        size={100}
+        area-label="Loading"
+      />
+    </div>
   );
 };
 

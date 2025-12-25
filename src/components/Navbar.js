@@ -27,7 +27,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-blue-700 border-b border-blue-500">
+    <nav className="bg-[#1E2D24] border-b border-[#345240]">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -186,7 +186,7 @@ const Navbar = () => {
                       className="block px-4 py-2 text-sm text-gray-700"
                       role="menuitem"
                       tabIndex="-1"
-                      onClick={() => IsProfileMenuOpen(false)}
+                      onClick={() => isProfileMenuOpen(false)}
                       id="user-menu-item-0"
                     >
                       Your Profile
