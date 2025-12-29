@@ -393,7 +393,7 @@ const AddPropertyForm = () => {
 
       <div>
         <button
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
+          className="bg-[#1E2D24] hover:bg-[#1E2D24] text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
           type="submit"
         >
           Add Property
